@@ -1,0 +1,166 @@
+:root {
+  --bg-main: #FDFCF8;
+  --text-main: #1F2937;
+  --accent-primary: #D97706;
+  --accent-secondary: #065F46;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-outfit { font-family: 'Outfit', system-ui, sans-serif; }
+
+/* Geometric Grid Accent Pattern (hero background) */
+.bg-geometric-grid {
+  background-size: 32px 32px;
+  background-image:
+    linear-gradient(to right, rgba(217, 119, 6, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(217, 119, 6, 0.04) 1px, transparent 1px);
+}
+
+.bg-geometric-dots {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(6, 95, 70, 0.08) 1.5px, transparent 1.5px);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #9CA3AF; }
+
+/* Utility animations (framer-motion replacements) */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fadeUp .5s ease both; }
+
+@keyframes floatBeacon {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.08); }
+}
+.animate-float-beacon { animation: floatBeacon 1.6s ease-in-out infinite; }
+
+@keyframes confettiFall {
+  to { transform: translateY(320px) rotate(400deg); opacity: 0; }
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  position: fixed; inset: 0; background: rgba(15, 13, 10, .55);
+  backdrop-filter: blur(2px); z-index: 60;
+  display: flex; align-items: center; justify-content: center; padding: 16px;
+}
+.hidden-modal { display: none !important; }
+
+/* line clamp helper */
+.line-clamp-2 {
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+/* toast */
+#toastWrap { position: fixed; bottom: 16px; right: 16px; z-index: 70; display: flex; flex-direction: column; gap: 8px; }
+.toast {
+  background: #1F2937; color: #fff; padding: 12px 16px; border-radius: 12px;
+  border: 1px solid #374151; box-shadow: 0 10px 25px rgba(0,0,0,.2);
+  font-size: 12px; max-width: 320px; animation: fadeUp .3s ease both;
+}
+.toast.success { border-color: #065F46; }
+.toast.warning { border-color: #D97706; }
+.toast.error { border-color: #DC2626; }
+
+/* ============================================================
+   PREMIUM UI LAYER — global polish applied across every page
+   (layers on top of the inline Tailwind utilities)
+   ============================================================ */
+:root {
+  --shadow-xs: 0 1px 2px rgba(31,41,55,.05), 0 1px 3px rgba(31,41,55,.04);
+  --shadow-sm: 0 2px 6px -2px rgba(31,41,55,.08), 0 8px 20px -10px rgba(31,41,55,.10);
+  --shadow-md: 0 8px 18px -8px rgba(31,41,55,.14), 0 16px 36px -14px rgba(31,41,55,.14);
+  --shadow-lg: 0 22px 48px -16px rgba(31,41,55,.24), 0 10px 20px -12px rgba(31,41,55,.12);
+  --ring-amber: 0 0 0 3px rgba(217,119,6,.18);
+  --radius-card: 18px;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+/* Smooth, consistent micro-interactions everywhere */
+a, button, [role="button"], .rounded-lg, .rounded-xl, .rounded-2xl, .rounded-3xl,
+input, select, textarea {
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease,
+              box-shadow .28s ease, transform .28s cubic-bezier(.22,1,.36,1), filter .2s ease;
+}
+button:active, a[class*="rounded"]:active, [role="button"]:active { transform: translateY(1px); }
+
+/* Refined, layered shadow scale (upgrades the flat Tailwind CDN shadows) */
+.shadow-xs { box-shadow: var(--shadow-xs) !important; }
+.shadow-sm { box-shadow: var(--shadow-sm) !important; }
+.shadow-md { box-shadow: var(--shadow-md) !important; }
+.shadow-lg { box-shadow: var(--shadow-lg) !important; }
+.shadow-xl { box-shadow: var(--shadow-lg) !important; }
+.hover\:shadow-md:hover { box-shadow: var(--shadow-md) !important; }
+.hover\:shadow-lg:hover { box-shadow: var(--shadow-lg) !important; }
+
+/* Interactive card hover-lift (tagged by JS on cards with hover:shadow-md) */
+.premium-card { will-change: transform; }
+.premium-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg) !important; }
+
+/* Premium glow on primary call-to-action buttons */
+button[class*="bg-[#D97706]"]:hover, a[class*="bg-[#D97706]"]:hover { box-shadow: 0 10px 26px -8px rgba(217,119,6,.55) !important; }
+button[class*="bg-red-600"]:hover, a[class*="bg-red-600"]:hover { box-shadow: 0 10px 26px -8px rgba(220,38,38,.5) !important; }
+button[class*="bg-[#065F46]"]:hover, a[class*="bg-[#065F46]"]:hover,
+button[class*="bg-emerald-600"]:hover, a[class*="bg-emerald-600"]:hover { box-shadow: 0 10px 26px -8px rgba(6,95,70,.45) !important; }
+
+/* Premium, accessible focus states */
+:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 2px; border-radius: 8px; }
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: none;
+  border-color: var(--accent-primary) !important;
+  box-shadow: var(--ring-amber) !important;
+}
+
+/* Sticky header gains depth once the page is scrolled */
+header { transition: box-shadow .3s ease, background-color .3s ease; }
+header.is-scrolled { box-shadow: 0 8px 30px -14px rgba(31,41,55,.30) !important; }
+
+/* Text selection + premium scrollbar */
+::selection { background: rgba(217,119,6,.92); color: #fff; }
+::-moz-selection { background: rgba(217,119,6,.92); color: #fff; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#E0B36A,#C98A2E);
+  border-radius: 8px; border: 2px solid var(--bg-main);
+}
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(#D99B3E,#B4771F); }
+
+/* Scroll-reveal (JS adds .reveal to below-the-fold blocks, then .reveal-in) */
+.reveal { opacity: 0; transform: translateY(26px); }
+.reveal.reveal-in {
+  opacity: 1; transform: none;
+  transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1);
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}

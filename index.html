@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pet & Stray Savior - 25m Vehicle Animal Collision Alert, Shelter & Adoption</title>
+<meta name="description" content="Smart Animal Safety System & Pet Shelter Network. 25-meter IoT vehicle collision alerts, 24/7 rescue ambulances, verified shelters, 80G donations, and free ethical adoption." />
+<meta name="theme-color" content="#D97706" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#FDFCF8] text-[#1F2937] antialiased selection:bg-amber-600 selection:text-white">
+
+<header class="sticky top-0 z-40 bg-[#FDFCF8]/95 backdrop-blur-md border-b border-[#E5E7EB] shadow-sm">
+  <div class="bg-[#1F2937] text-white text-xs py-1.5 px-4 border-b border-stone-800">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1 bg-[#D97706] text-white px-2 py-0.5 rounded-md font-bold text-[10px] tracking-wider uppercase">24/7 Road Rescue</span>
+        <span class="hidden sm:inline text-amber-200 font-medium">Stray &amp; Wildlife Collision Safety Hotline:</span>
+        <a href="tel:9973169896" class="font-bold text-amber-300 hover:text-white flex items-center gap-1 transition-colors">
+          <i data-lucide="phone-call" class="w-3 h-3"></i> 9973169896 (24x7 Helpline)
+        </a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button onclick="toggleSound()" class="text-stone-300 hover:text-amber-300 flex items-center gap-1 text-[11px] transition-colors">
+          <i data-lucide="volume-2" data-sound-icon class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span class="hidden md:inline" data-sound-label>Buzzer On</span>
+        </button>
+        <span class="text-stone-600">|</span>
+        <div class="flex items-center gap-1.5 text-[11px] text-amber-300 font-medium">
+          <i data-lucide="radio" class="w-3 h-3 text-emerald-400 animate-pulse"></i>
+          <span>Active IoT Collars: <strong class="text-white">1,480+</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3 group text-left">
+        <div class="relative w-11 h-11 rounded-xl bg-[#D97706] flex items-center justify-center shadow-md shadow-amber-600/20 group-hover:scale-105 transition-transform">
+          <i data-lucide="paw-print" class="w-6 h-6 text-white"></i>
+          <div class="absolute -bottom-1 -right-1 w-4.5 h-4.5 rounded-full bg-[#065F46] border-2 border-white flex items-center justify-center">
+            <i data-lucide="shield" class="w-2.5 h-2.5 text-white"></i>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-outfit font-black text-xl tracking-tight text-[#1F2937]">PET &amp; STRAY</span>
+            <span class="font-outfit font-black text-xl tracking-tight text-[#D97706]">SAVIOR</span>
+          </div>
+          <p class="text-[10px] font-bold tracking-wider uppercase text-[#065F46] flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#065F46] animate-ping"></span>
+            Smart Safety &amp; Pet Care System
+          </p>
+        </div>
+      </a>
+
+      <nav class="hidden xl:flex items-center gap-1">
+        <a href="index.html" class="relative px-3.5 py-2 rounded-xl text-sm font-semibold transition-all flex items-center gap-1.5 text-[#D97706] bg-amber-50 font-bold border border-amber-200/80 shadow-sm">Home</a><a href="services.html" class="relative px-3.5 py-2 rounded-xl text-sm font-semibold transition-all flex items-center gap-1.5 text-[#1F2937] hover:text-[#D97706] hover:bg-stone-100/60 border border-transparent">Services</a><a href="features.html" class="relative px-3.5 py-2 rounded-xl text-sm font-semibold transition-all flex items-center gap-1.5 text-[#1F2937] hover:text-[#D97706] hover:bg-stone-100/60 border border-transparent">25m Alert Radar<span class="text-[10px] uppercase font-extrabold px-1.5 py-0.5 rounded bg-[#065F46] text-white">IoT</span></a><a href="shelter.html" class="relative px-3.5 py-2 rounded-xl text-sm font-semibold transition-all flex items-center gap-1.5 text-[#1F2937] hover:text-[#D97706] hover:bg-stone-100/60 border border-transparent">Shelters &amp; Adoption</a><a href="donation.html" class="relative px-3.5 py-2 rounded-xl text-sm font-semibold transition-all flex items-center gap-1.5 text-[#1F2937] hover:text-[#D97706] hover:bg-stone-100/60 border border-transparent">Donate &amp; Sponsor<span class="text-[10px] uppercase font-extrabold px-1.5 py-0.5 rounded bg-[#065F46] text-white">80G</span></a><a href="about.html" class="relative px-3.5 py-2 rounded-xl text-sm font-semibold transition-all flex items-center gap-1.5 text-[#1F2937] hover:text-[#D97706] hover:bg-stone-100/60 border border-transparent">About Us</a><a href="contact.html" class="relative px-3.5 py-2 rounded-xl text-sm font-semibold transition-all flex items-center gap-1.5 text-[#1F2937] hover:text-[#D97706] hover:bg-stone-100/60 border border-transparent">Contact &amp; SOS</a>
+      </nav>
+
+      <div class="hidden xl:flex items-center gap-2.5">
+        <button onclick="openModal('easyGuideModal')" class="px-3 py-2 rounded-xl bg-amber-50 hover:bg-amber-100/80 text-amber-900 border border-amber-200/80 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm">
+          <i data-lucide="help-circle" class="w-3.5 h-3.5 text-amber-600"></i><span>User Guide</span>
+        </button>
+        <button onclick="openModal('sosModal')" class="relative px-3.5 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-md shadow-red-600/20 flex items-center gap-1.5 transition-all hover:scale-105 active:scale-95">
+          <i data-lucide="alert-octagon" class="w-4 h-4 animate-bounce"></i><span>SOS Rescue</span>
+        </button>
+        <button onclick="openModal('adminModal')" class="px-3.5 py-2 rounded-xl bg-[#1F2937] hover:bg-stone-800 text-stone-100 text-xs font-bold border border-stone-700 flex items-center gap-1.5 shadow-sm transition-all hover:border-amber-500/50">
+          <i data-lucide="database" class="w-3.5 h-3.5 text-amber-400"></i><span>Central DB</span>
+          <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+        </button>
+        <div data-auth-slot class="contents"><button onclick="openModal('authModal')" class="flex items-center gap-2 p-1.5 pl-2.5 pr-3 rounded-xl bg-white hover:bg-amber-50/70 border border-[#E5E7EB] text-xs font-semibold text-[#1F2937] transition-colors shadow-sm">
+          <div class="w-6 h-6 rounded-lg bg-[#D97706] text-white flex items-center justify-center text-xs font-bold">
+            <i data-lucide="user" class="w-3.5 h-3.5"></i>
+          </div>
+          <div class="text-left">
+            <p class="text-[11px] font-bold leading-none text-[#1F2937]">Sign In</p>
+            <p class="text-[9px] uppercase tracking-wider text-[#D97706] font-bold leading-tight">Guest</p>
+          </div>
+        </button></div>
+      </div>
+
+      <div class="flex xl:hidden items-center gap-2">
+        <button onclick="openModal('sosModal')" class="p-2 rounded-xl bg-red-600 text-white shadow-xs" aria-label="SOS Rescue">
+          <i data-lucide="alert-octagon" class="w-5 h-5"></i>
+        </button>
+        <button onclick="toggleMobileMenu()" class="p-2 rounded-xl bg-amber-100/80 text-slate-800 hover:bg-amber-200/80 transition-colors" aria-label="Toggle menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="hidden-modal xl:hidden border-t border-amber-200/60 bg-white/95 backdrop-blur-xl px-4 py-5 space-y-3">
+    <div class="grid grid-cols-2 gap-2">
+      <a href="index.html" class="p-3 rounded-xl text-left text-sm font-bold flex items-center justify-between bg-amber-500 text-white shadow-md shadow-amber-500/20"><span>Home</span></a><a href="services.html" class="p-3 rounded-xl text-left text-sm font-bold flex items-center justify-between bg-amber-50/70 text-slate-800 hover:bg-amber-100/70"><span>Services</span></a><a href="features.html" class="p-3 rounded-xl text-left text-sm font-bold flex items-center justify-between bg-amber-50/70 text-slate-800 hover:bg-amber-100/70"><span>25m Alert Radar</span><span class="text-[9px] font-black px-1.5 py-0.5 rounded-full bg-emerald-600 text-white">IoT</span></a><a href="shelter.html" class="p-3 rounded-xl text-left text-sm font-bold flex items-center justify-between bg-amber-50/70 text-slate-800 hover:bg-amber-100/70"><span>Shelters &amp; Adoption</span></a><a href="donation.html" class="p-3 rounded-xl text-left text-sm font-bold flex items-center justify-between bg-amber-50/70 text-slate-800 hover:bg-amber-100/70"><span>Donate &amp; Sponsor</span><span class="text-[9px] font-black px-1.5 py-0.5 rounded-full bg-emerald-600 text-white">80G</span></a><a href="about.html" class="p-3 rounded-xl text-left text-sm font-bold flex items-center justify-between bg-amber-50/70 text-slate-800 hover:bg-amber-100/70"><span>About Us</span></a><a href="contact.html" class="p-3 rounded-xl text-left text-sm font-bold flex items-center justify-between bg-amber-50/70 text-slate-800 hover:bg-amber-100/70"><span>Contact &amp; SOS</span></a>
+    </div>
+    <div class="pt-3 border-t border-amber-100 flex flex-col gap-2">
+      <button onclick="openModal('easyGuideModal')" class="w-full py-2.5 px-4 rounded-xl bg-amber-50 border border-amber-300 text-amber-900 font-bold text-sm flex items-center justify-center gap-2">
+        <i data-lucide="help-circle" class="w-4 h-4 text-amber-600"></i><span>User Guide: How It Works</span>
+      </button>
+      <button onclick="openModal('adminModal')" class="w-full py-2.5 px-4 rounded-xl bg-slate-900 text-white font-bold text-sm flex items-center justify-center gap-2">
+        <i data-lucide="database" class="w-4 h-4 text-amber-400"></i>Central Database &amp; Flow Chart Portal
+      </button>
+      <div data-auth-slot-mobile>
+        <button onclick="openModal('authModal')" class="w-full py-2.5 px-4 rounded-xl bg-amber-100 text-amber-900 font-bold text-sm flex items-center justify-center gap-2">
+          <i data-lucide="user" class="w-4 h-4"></i>User Registration &amp; Login
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="pt-4">
+<section class="relative pt-6 sm:pt-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-geometric-grid">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <div class="lg:col-span-7 space-y-6 text-left animate-fade-up">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-amber-50 border border-amber-200/80 text-[#D97706] text-xs font-bold shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-[#065F46] animate-pulse"></span>
+        <span class="uppercase tracking-wider">25-Meter Collision Warning &amp; Animal Welfare Network</span>
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#D97706]"></i>
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black font-outfit tracking-tight text-[#1F2937] leading-[1.1]">
+        Smart 25m Road Safety &amp; <span class="text-[#D97706]">Animal Shelters</span> Platform
+      </h1>
+      <p class="text-base sm:text-lg text-stone-600 leading-relaxed max-w-2xl font-normal">
+        Warning drivers strictly when animals are within <strong class="text-[#1F2937]">25 meters</strong> to prevent highway collisions, paired with <strong class="text-[#1F2937]">species-specialized animal shelters, 24/7 rescue ambulances, transparent 80G donations, and free adoptions</strong>.
+      </p>
+      <div class="flex flex-wrap items-center gap-3 pt-2">
+        <button onclick="openModal('easyGuideModal')" class="px-5 py-3 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-950 font-bold text-sm border border-amber-300 shadow-xs flex items-center gap-2 transition-all hover:scale-102">
+          <i data-lucide="help-circle" class="w-4 h-4 text-amber-700"></i><span>💡 User Guide: How It Works</span>
+        </button>
+        <a href="features.html" class="px-6 py-3 rounded-xl bg-[#D97706] hover:bg-amber-700 text-white font-bold text-sm shadow-md shadow-amber-600/20 flex items-center gap-2.5 transition-all transform hover:-translate-y-0.5">
+          <i data-lucide="radio" class="w-4 h-4"></i><span>Explore Smart Collar &amp; Radar</span><i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="shelter.html" class="px-6 py-3 rounded-xl bg-white hover:bg-amber-50/80 text-[#1F2937] font-bold text-sm border border-[#E5E7EB] shadow-xs flex items-center gap-2 transition-all hover:border-amber-400">
+          <i data-lucide="heart" class="w-4 h-4 text-rose-500 fill-rose-500"></i><span>Adopt a Rescued Pet</span>
+        </a>
+        <button onclick="openModal('sosModal')" class="px-5 py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-sm shadow-md shadow-red-600/20 flex items-center gap-2 transition-all">
+          <i data-lucide="alert-octagon" class="w-4 h-4"></i><span>24/7 SOS Rescue</span>
+        </button>
+      </div>
+      <div class="pt-4 grid grid-cols-3 gap-3 border-t border-[#E5E7EB] max-w-xl">
+        <div class="space-y-0.5 bg-white p-3 rounded-xl border border-[#E5E7EB] shadow-xs"><p class="text-2xl font-black font-outfit text-[#1F2937]" data-stat="taggedAnimals">1,480+</p><p class="text-xs text-stone-500 font-semibold">Tagged Strays</p></div>
+        <div class="space-y-0.5 bg-white p-3 rounded-xl border border-[#E5E7EB] shadow-xs"><p class="text-2xl font-black font-outfit text-[#065F46]" data-stat="collisionsAvoided">1,120+</p><p class="text-xs text-stone-500 font-semibold">Collisions Saved</p></div>
+        <div class="space-y-0.5 bg-white p-3 rounded-xl border border-[#E5E7EB] shadow-xs"><p class="text-2xl font-black font-outfit text-[#D97706]" data-stat="petsAdopted">340+</p><p class="text-xs text-stone-500 font-semibold">Pets Adopted</p></div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5">
+      <div class="relative bg-[#1F2937] rounded-2xl p-6 border border-stone-700 shadow-xl text-white space-y-5 overflow-hidden">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></div>
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Live Collision Warning HUD</span>
+          </div>
+          <span class="text-[11px] font-mono bg-stone-800 px-2 py-0.5 rounded border border-stone-700 text-amber-400">OBD-II • 868MHz RF</span>
+        </div>
+        <div class="relative bg-stone-900 rounded-xl p-4 border border-stone-800 text-center space-y-3">
+          <div class="flex items-center justify-between text-xs text-stone-400 font-mono">
+            <span>Vehicle: DL-04-CB-9942</span>
+            <span id="radarSpeed">Speed: 48 km/h</span>
+          </div>
+          <div class="relative py-6 flex items-center justify-center">
+            <div class="absolute w-36 h-36 rounded-full border border-emerald-500/20 animate-pulse"></div>
+            <div class="absolute w-24 h-24 rounded-full border border-amber-500/30"></div>
+            <div id="radarBeacon" class="relative z-10 p-3 rounded-xl bg-[#D97706] text-white shadow-md shadow-amber-600/40 flex flex-col items-center">
+              <i data-lucide="paw-print" class="w-6 h-6"></i>
+              <span class="text-[9px] font-bold mt-1">Sheru (Indie Tag)</span>
+            </div>
+          </div>
+          <div id="radarStatus" class="p-3 rounded-xl border text-xs font-bold transition-all bg-stone-800/80 border-stone-700 text-stone-300">
+            Proximity Radar Active. Scanning for tagged collars in 150m radius.
+          </div>
+          <button id="radarDemoBtn" class="w-full py-2.5 bg-[#D97706] hover:bg-amber-700 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm">
+            <i data-lucide="play" class="w-3.5 h-3.5"></i>Test Proximity Buzzer &amp; Safe Passage
+          </button>
+        </div>
+        <div class="flex items-center justify-between text-[11px] text-stone-400">
+          <span class="flex items-center gap-1 text-emerald-400"><i data-lucide="shield" class="w-3.5 h-3.5"></i> 98.4% Collision Reduction</span>
+          <a href="features.html" class="text-amber-400 hover:underline flex items-center gap-1 font-semibold">View Full Safety Simulator <i data-lucide="chevron-right" class="w-3 h-3"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mt-16 sm:mt-24">
+  <div class="bg-gradient-to-r from-amber-500/10 via-emerald-500/10 to-rose-500/10 rounded-3xl p-6 sm:p-8 border border-amber-200/80 shadow-sm space-y-6">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <span class="text-[11px] font-extrabold uppercase tracking-wider text-amber-800 bg-amber-100 px-3 py-1 rounded-md border border-amber-300">Simple Guide • 3 Key Steps</span>
+        <h2 class="text-2xl sm:text-3xl font-black font-outfit text-[#1F2937] mt-2">How to Use the Platform</h2>
+        <p class="text-xs sm:text-sm text-stone-600">Whether you are a driver, rescuer, or pet lover—everything is accessible with just one click.</p>
+      </div>
+      <button onclick="openModal('easyGuideModal')" class="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs flex items-center gap-1.5 shadow-xs transition-transform hover:scale-105 shrink-0">
+        <i data-lucide="help-circle" class="w-4 h-4"></i><span>Full Visual User Manual</span>
+      </button>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="bg-white rounded-2xl p-5 border border-stone-200 shadow-xs space-y-3 hover:border-amber-400 transition-colors">
+        <div class="flex items-center justify-between"><span class="w-8 h-8 rounded-xl bg-amber-500 text-white font-black text-sm flex items-center justify-center shadow-xs">1</span><span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">For Drivers</span></div>
+        <h3 class="font-bold text-base text-[#1F2937] flex items-center gap-2"><i data-lucide="radio" class="w-4 h-4 text-amber-600"></i>25m Collision Alert</h3>
+        <p class="text-xs text-stone-600 leading-relaxed">When an animal enters within a 25-meter range ahead of your vehicle, the in-cabin buzzer warns you to slow down safely.</p>
+        <a href="features.html" class="text-xs font-bold text-amber-700 hover:text-amber-800 flex items-center gap-1 pt-1"><span>Test Live Proximity Radar</span><i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-stone-200 shadow-xs space-y-3 hover:border-red-400 transition-colors">
+        <div class="flex items-center justify-between"><span class="w-8 h-8 rounded-xl bg-red-600 text-white font-black text-sm flex items-center justify-center shadow-xs">2</span><span class="text-[10px] font-extrabold uppercase tracking-wider text-red-700 bg-red-50 px-2 py-0.5 rounded border border-red-200">Emergency Help</span></div>
+        <h3 class="font-bold text-base text-[#1F2937] flex items-center gap-2"><i data-lucide="alert-octagon" class="w-4 h-4 text-red-600"></i>Report SOS Rescue</h3>
+        <p class="text-xs text-stone-600 leading-relaxed">Spotted an injured or trapped animal? Tap SOS Rescue or call our 24x7 hotline for immediate ambulance dispatch.</p>
+        <button onclick="openModal('sosModal')" class="text-xs font-bold text-red-700 hover:text-red-800 flex items-center gap-1 pt-1"><span>Report Now</span><i data-lucide="arrow-right" class="w-3 h-3"></i></button>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-stone-200 shadow-xs space-y-3 hover:border-emerald-400 transition-colors">
+        <div class="flex items-center justify-between"><span class="w-8 h-8 rounded-xl bg-[#065F46] text-white font-black text-sm flex items-center justify-center shadow-xs">3</span><span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Pet Lovers</span></div>
+        <h3 class="font-bold text-base text-[#1F2937] flex items-center gap-2"><i data-lucide="home" class="w-4 h-4 text-emerald-700"></i>Adopt or Donate</h3>
+        <p class="text-xs text-stone-600 leading-relaxed">Browse verified shelters, adopt a rescued pet for free, or sponsor a smart collar with an 80G tax-exempt donation.</p>
+        <a href="shelter.html" class="text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1 pt-1"><span>Browse Shelters</span><i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mt-16 sm:mt-24 space-y-8">
+  <div class="text-center max-w-2xl mx-auto space-y-2">
+    <span class="text-xs font-bold tracking-wider text-[#D97706] uppercase bg-amber-50 border border-amber-200/80 px-3 py-1 rounded-md">Complete Animal Welfare Ecosystem</span>
+    <h2 class="text-3xl sm:text-4xl font-black font-outfit text-[#1F2937]">Dedicated Modules for Safety, Care &amp; Adoption</h2>
+    <p class="text-sm sm:text-base text-stone-600">Explore our specialized independent systems designed to prevent collisions, provide species-specific shelter care, facilitate adoptions, and power transparent donations.</p>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4">
+      <div class="space-y-3">
+        <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 text-[#D97706] flex items-center justify-center"><i data-lucide="radio" class="w-6 h-6 animate-pulse"></i></div>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-[#D97706] bg-amber-50 px-2 py-0.5 rounded border border-amber-200">≤ 25m Alert Radius</span>
+        <h3 class="text-xl font-bold font-outfit text-[#1F2937]">25m Collision Warning Radar</h3>
+        <p class="text-xs text-stone-600 leading-relaxed">Solar RF collars alert drivers within 25 meters via in-cabin buzzer. Beyond 25m, zero false alarms.</p>
+      </div>
+      <a href="features.html" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-xs"><span>Explore 25m Radar</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+    </div>
+    <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4">
+      <div class="space-y-3">
+        <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 text-[#065F46] flex items-center justify-center"><i data-lucide="home" class="w-6 h-6"></i></div>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-[#065F46] bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Dogs • Cats • Cows • Birds</span>
+        <h3 class="text-xl font-bold font-outfit text-[#1F2937]">Species Shelters &amp; Adoption</h3>
+        <p class="text-xs text-stone-600 leading-relaxed">Dedicated shelters for dogs, cats, cows (gaushala), birds, and disabled pets with 100% free adoptions.</p>
+      </div>
+      <a href="shelter.html" class="w-full py-2.5 rounded-xl bg-[#065F46] hover:bg-[#044a37] text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-xs"><span>View Shelter Directory</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+    </div>
+    <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4">
+      <div class="space-y-3">
+        <div class="w-12 h-12 rounded-xl bg-rose-50 border border-rose-200 text-rose-600 flex items-center justify-center"><i data-lucide="heart" class="w-6 h-6 fill-rose-600"></i></div>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">80G Tax Exemption</span>
+        <h3 class="text-xl font-bold font-outfit text-[#1F2937]">Donation &amp; Sponsorship</h3>
+        <p class="text-xs text-stone-600 leading-relaxed">Sponsor ₹500 collar tags, emergency ICU surgeries, daily meals, or shelter adoption kits with instant receipts.</p>
+      </div>
+      <a href="donation.html" class="w-full py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-xs"><span>Donate &amp; Sponsor</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+    </div>
+    <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4">
+      <div class="space-y-3">
+        <div class="w-12 h-12 rounded-xl bg-red-50 border border-red-200 text-red-600 flex items-center justify-center"><i data-lucide="alert-octagon" class="w-6 h-6"></i></div>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-red-600 bg-red-50 px-2 py-0.5 rounded border border-red-200">12-Min Avg Response</span>
+        <h3 class="text-xl font-bold font-outfit text-[#1F2937]">24/7 Emergency SOS Rescue</h3>
+        <p class="text-xs text-stone-600 leading-relaxed">One-tap GPS ambulance dispatch for injured road animals, accident trauma, and critical veterinary medical care.</p>
+      </div>
+      <button onclick="openModal('sosModal')" class="w-full py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-xs"><span>Launch SOS Rescue</span><i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+    </div>
+  </div>
+
+  <div class="bg-[#1F2937] text-white rounded-2xl p-6 border border-stone-700 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md">
+    <div class="flex items-center gap-4">
+      <div class="w-12 h-12 rounded-xl bg-stone-800 border border-stone-700 flex items-center justify-center shrink-0"><i data-lucide="paw-print" class="w-6 h-6 text-[#D97706]"></i></div>
+      <div>
+        <h4 class="text-base font-bold font-outfit text-white">Central Database &amp; Website Management Portal</h4>
+        <p class="text-xs text-stone-400">Connected data stream managing Animals, Sensors, Detection Alerts, Shelters, Donations &amp; Reports.</p>
+      </div>
+    </div>
+    <button onclick="openModal('adminModal')" class="px-5 py-2.5 bg-[#D97706] hover:bg-amber-700 text-white font-bold text-xs rounded-xl flex items-center gap-2 whitespace-nowrap shadow-sm"><span>Open Central DB Portal</span><i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+  </div>
+</section>
+
+<section class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mt-16 sm:mt-24 space-y-8">
+  <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+    <div>
+      <span class="text-xs font-bold text-[#D97706] uppercase tracking-wider">Forever Homes Needed</span>
+      <h2 class="text-3xl font-bold font-outfit text-[#1F2937] mt-1">Rescued &amp; Tagged Pets for Adoption</h2>
+    </div>
+    <a href="shelter.html" class="text-xs font-bold text-[#D97706] hover:text-amber-800 flex items-center gap-1"><span>View All Available Pets (5)</span><i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" data-pets-grid data-limit="3">
+    <div class="bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80" alt="Simba" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500">
+        <span class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-md shadow-xs">Urgent Rescue</span>
+        <div class="absolute top-3 right-3 bg-white/95 p-2 rounded-lg text-rose-500 shadow-xs"><i data-lucide="heart" class="w-4 h-4 fill-rose-500"></i></div>
+      </div>
+      <div class="p-5 space-y-4 flex-1 flex flex-col justify-between">
+        <div class="space-y-2">
+          <div class="flex items-center justify-between"><h3 class="text-xl font-bold font-outfit text-[#1F2937]">Simba</h3><span class="text-xs font-bold text-[#065F46] bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">₹0 Adoption Fee</span></div>
+          <p class="text-xs text-stone-500 font-medium">Desi Indie Pup • 5 Months • Male</p>
+          <div class="flex flex-wrap gap-1.5 pt-1"><span class="text-[10px] font-semibold bg-stone-100 text-stone-700 px-2 py-0.5 rounded-md border border-stone-200">Playful</span><span class="text-[10px] font-semibold bg-stone-100 text-stone-700 px-2 py-0.5 rounded-md border border-stone-200">Loves Kids</span><span class="text-[10px] font-semibold bg-stone-100 text-stone-700 px-2 py-0.5 rounded-md border border-stone-200">Fast Learner</span></div>
+          <p class="text-xs text-stone-600 line-clamp-2 leading-relaxed pt-1">Simba was rescued from highway roadside and fitted with a Savior smart collar. He is vibrant, affectionate, and looking for a loving home!</p>
+        </div>
+        <div class="pt-4 border-t border-stone-100 space-y-3">
+          <p class="text-[11px] text-stone-500 flex items-center gap-1 font-semibold"><i data-lucide="home" class="w-3.5 h-3.5 text-[#D97706]"></i> Paws & Care Animal Sanctuary</p>
+          <button onclick="openAdoptModal('Simba')" class="w-full py-2.5 rounded-xl bg-[#D97706] hover:bg-amber-700 text-white font-bold text-xs shadow-xs flex items-center justify-center gap-1.5 transition-all"><i data-lucide="paw-print" class="w-4 h-4"></i><span>Apply to Adopt Simba</span></button>
+        </div>
+      </div>
+    </div><div class="bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=80" alt="Luna" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500">
+        
+        <div class="absolute top-3 right-3 bg-white/95 p-2 rounded-lg text-rose-500 shadow-xs"><i data-lucide="heart" class="w-4 h-4 fill-rose-500"></i></div>
+      </div>
+      <div class="p-5 space-y-4 flex-1 flex flex-col justify-between">
+        <div class="space-y-2">
+          <div class="flex items-center justify-between"><h3 class="text-xl font-bold font-outfit text-[#1F2937]">Luna</h3><span class="text-xs font-bold text-[#065F46] bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">₹0 Adoption Fee</span></div>
+          <p class="text-xs text-stone-500 font-medium">Ginger Tabby • 1 Year • Female</p>
+          <div class="flex flex-wrap gap-1.5 pt-1"><span class="text-[10px] font-semibold bg-stone-100 text-stone-700 px-2 py-0.5 rounded-md border border-stone-200">Cuddle Bug</span><span class="text-[10px] font-semibold bg-stone-100 text-stone-700 px-2 py-0.5 rounded-md border border-stone-200">Quiet</span><span class="text-[10px] font-semibold bg-stone-100 text-stone-700 px-2 py-0.5 rounded-md border border-stone-200">Apartment Friendly</span></div>
+          <p class="text-xs text-stone-600 line-clamp-2 leading-relaxed pt-1">Luna is a gorgeous purring companion rescued during rainy season. She loves warm laps and sunny windowsills.</p>
+        </div>
+        <div class="pt-4 border-t border-stone-100 space-y-3">
+          <p class="text-[11px] text-stone-500 flex items-center gap-1 font-semibold"><i data-lucide="home" class="w-3.5 h-3.5 text-[#D97706]"></i> Haven Animal Hospital</p>
+          <button onclick="openAdoptModal('Luna')" class="w-full py-2.5 rounded-xl bg-[#D97706] hover:bg-amber-700 text-white font-bold text-xs shadow-xs flex items-center justify-center gap-1.5 transition-all"><i data-lucide="paw-print" class="w-4 h-4"></i><span>Apply to Adopt Luna</span></button>
+        </div>
+      </div>
+    </div><div class="bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=800&q=80" alt="Buster" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500">
+        
+        <div class="absolute top-3 right-3 bg-white/95 p-2 rounded-lg text-rose-500 shadow-xs"><i data-lucide="heart" class="w-4 h-4 fill-rose-500"></i></div>
+      </div>
+      <div class="p-5 space-y-4 flex-1 flex flex-col justify-between">
+        <div class="space-y-2">
+          <div class="flex items-center justify-between"><h3 class="text-xl font-bold font-outfit text-[#1F2937]">Buster</h3><span class="text-xs font-bold text-[#065F46] bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">₹0 Adoption Fee</span></div>
+          <p class="text-xs text-stone-500 font-medium">Beagle Cross • 2 Years • Male</p>
+          <div class="flex flex-wrap gap-1.5 pt-1"><span class="text-[10px] font-semibold bg-stone-100 text-stone-700 px-2 py-0.5 rounded-md border border-stone-200">Loyal</span><span class="text-[10px] font-semibold bg-stone-100 text-stone-700 px-2 py-0.5 rounded-md border border-stone-200">Energetic</span><span class="text-[10px] font-semibold bg-stone-100 text-stone-700 px-2 py-0.5 rounded-md border border-stone-200">Friendly</span></div>
+          <p class="text-xs text-stone-600 line-clamp-2 leading-relaxed pt-1">Buster is a joyful soul who loves outdoor runs and fetch. Ready to be your lifelong best friend.</p>
+        </div>
+        <div class="pt-4 border-t border-stone-100 space-y-3">
+          <p class="text-[11px] text-stone-500 flex items-center gap-1 font-semibold"><i data-lucide="home" class="w-3.5 h-3.5 text-[#D97706]"></i> Paws & Care Animal Sanctuary</p>
+          <button onclick="openAdoptModal('Buster')" class="w-full py-2.5 rounded-xl bg-[#D97706] hover:bg-amber-700 text-white font-bold text-xs shadow-xs flex items-center justify-center gap-1.5 transition-all"><i data-lucide="paw-print" class="w-4 h-4"></i><span>Apply to Adopt Buster</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mt-16 sm:mt-24">
+  <div class="bg-[#1F2937] rounded-2xl p-7 text-white shadow-md border border-stone-700 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="space-y-2 max-w-2xl">
+      <div class="inline-flex items-center gap-2 bg-red-900/60 px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider text-red-200 border border-red-800"><i data-lucide="alert-octagon" class="w-4 h-4"></i><span>National 24/7 Road Rescue Hotline</span></div>
+      <h3 class="text-2xl sm:text-3xl font-black font-outfit">Spotted an Injured or Trapped Stray Animal on the Road?</h3>
+      <p class="text-sm text-stone-300 leading-relaxed">Report the GPS location and situation immediately. Our nearest veterinary ambulance and volunteer squad will be dispatched with trauma kits.</p>
+    </div>
+    <div class="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
+      <button onclick="openModal('sosModal')" class="w-full sm:w-auto px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-sm rounded-xl shadow-md flex items-center justify-center gap-2"><i data-lucide="alert-octagon" class="w-4 h-4"></i><span>Report Road SOS Now</span></button>
+      <a href="tel:9973169896" class="w-full sm:w-auto px-6 py-3 bg-stone-800 hover:bg-stone-700 border border-stone-600 text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2"><i data-lucide="phone-call" class="w-4 h-4 text-amber-300"></i><span>Call 9973169896</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mt-16 sm:mt-24 space-y-8 pb-16">
+  <div class="text-center max-w-2xl mx-auto space-y-2">
+    <span class="text-xs font-bold text-[#065F46] uppercase tracking-wider bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-md">Voices from Drivers &amp; Rescuers</span>
+    <h2 class="text-3xl font-bold font-outfit text-[#1F2937]">Real Stories of Saved Lives</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-testimonials-grid>
+    <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] shadow-xs space-y-4 flex flex-col justify-between">
+      <div class="space-y-3">
+        <span class="text-[10px] font-bold uppercase px-2.5 py-1 bg-amber-50 text-[#D97706] rounded-md border border-amber-200/60">Driver Collision Warning</span>
+        <p class="text-sm text-stone-600 italic leading-relaxed">"The in-cabin collision buzzer alerted me 40 meters before an indie dog crossed near the Noida Expressway slip road at midnight. I slowed down safely and averted what could have been a fatal accident."</p>
+      </div>
+      <div class="pt-3 border-t border-stone-100"><p class="font-bold text-[#1F2937] text-sm">Rajesh Kumar</p><p class="text-xs text-stone-500">Commercial Cab Driver</p></div>
+    </div>
+    <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] shadow-xs space-y-4 flex flex-col justify-between">
+      <div class="space-y-3">
+        <span class="text-[10px] font-bold uppercase px-2.5 py-1 bg-amber-50 text-[#D97706] rounded-md border border-amber-200/60">Shelter &amp; Care Management</span>
+        <p class="text-sm text-stone-600 italic leading-relaxed">"Managing 120 shelter beds was chaotic before Pet &amp; Stray Savior. Now, our medical wards, adoption listings, and smart collar inventory are updated in real-time."</p>
+      </div>
+      <div class="pt-3 border-t border-stone-100"><p class="font-bold text-[#1F2937] text-sm">Dr. Vikram Singh</p><p class="text-xs text-stone-500">Chief Shelter Director, Paws Sanctuary</p></div>
+    </div>
+    <div class="bg-white rounded-2xl p-6 border border-[#E5E7EB] shadow-xs space-y-4 flex flex-col justify-between">
+      <div class="space-y-3">
+        <span class="text-[10px] font-bold uppercase px-2.5 py-1 bg-amber-50 text-[#D97706] rounded-md border border-amber-200/60">Ethical Pet Adoption</span>
+        <p class="text-sm text-stone-600 italic leading-relaxed">"We adopted Simba after he was rescued and fitted with a Savior collar. The adoption process was completely ethical, transparent, and hassle-free!"</p>
+      </div>
+      <div class="pt-3 border-t border-stone-100"><p class="font-bold text-[#1F2937] text-sm">Pooja &amp; Sameer Deshmukh</p><p class="text-xs text-stone-500">Pet Parents</p></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="bg-[#1F2937] text-white border-t border-stone-800 relative overflow-hidden mt-16">
+  <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#D97706] via-amber-500 to-[#065F46]"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 space-y-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+      <div class="lg:col-span-2 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-[#D97706] flex items-center justify-center text-white shadow-md shadow-amber-600/30">
+            <i data-lucide="paw-print" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <span class="text-xl font-black font-outfit tracking-tight text-white">Pet &amp; Stray <span class="text-[#D97706]">Savior</span></span>
+            <p class="text-[10px] text-stone-400 font-semibold tracking-wider uppercase">Smart Animal Safety &amp; Care Network</p>
+          </div>
+        </div>
+        <p class="text-xs text-stone-400 leading-relaxed pr-4">Pioneering solar-assisted IoT collar tags and driver acoustic warning systems to eliminate road animal collisions, paired with transparent animal shelter care and ethical adoptions.</p>
+        <div class="flex items-center gap-3 pt-2">
+          <button onclick="openModal('sosModal')" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-bold shadow-md shadow-red-600/30 flex items-center gap-2 transition-colors">
+            <i data-lucide="phone-call" class="w-3.5 h-3.5"></i><span>24/7 Road Emergency SOS</span>
+          </button>
+          <button onclick="openModal('adminModal')" class="px-3 py-2 bg-stone-800 hover:bg-stone-700 border border-stone-700 text-stone-300 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-colors">
+            <i data-lucide="database" class="w-3.5 h-3.5 text-amber-400"></i><span>Central DB</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-[#D97706] font-outfit">7 Core Pages</h4>
+        <ul class="space-y-2 text-xs text-stone-400">
+          <li><a href="index.html" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i data-lucide="arrow-right" class="w-3 h-3 text-[#D97706]"></i>Home Dashboard</a></li>
+          <li><a href="services.html" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i data-lucide="arrow-right" class="w-3 h-3 text-[#D97706]"></i>Services &amp; Booking</a></li>
+          <li><a href="features.html" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i data-lucide="arrow-right" class="w-3 h-3 text-[#D97706]"></i>Features &amp; Radar Simulator</a></li>
+          <li><a href="shelter.html" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i data-lucide="arrow-right" class="w-3 h-3 text-[#D97706]"></i>Shelter, Care &amp; Adoption</a></li>
+          <li><a href="donation.html" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i data-lucide="arrow-right" class="w-3 h-3 text-[#D97706]"></i>Donation &amp; Sponsorship (80G)</a></li>
+          <li><a href="about.html" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i data-lucide="arrow-right" class="w-3 h-3 text-[#D97706]"></i>About &amp; System Architecture</a></li>
+          <li><a href="contact.html" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i data-lucide="arrow-right" class="w-3 h-3 text-[#D97706]"></i>Contact Us &amp; SOS Helpline</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-amber-400 font-outfit">Flow Chart Modules</h4>
+        <ul class="space-y-2 text-xs text-stone-400">
+          <li class="flex items-center gap-1.5 text-emerald-400"><i data-lucide="radio" class="w-3 h-3"></i><span>Animal Registration &amp; Tags</span></li>
+          <li class="flex items-center gap-1.5 text-emerald-400"><i data-lucide="radio" class="w-3 h-3"></i><span>Vehicle Warning Buzzer</span></li>
+          <li class="flex items-center gap-1.5 text-amber-400"><i data-lucide="heart" class="w-3 h-3"></i><span>Shelter &amp; Boarding Booking</span></li>
+          <li class="flex items-center gap-1.5 text-amber-400"><i data-lucide="heart" class="w-3 h-3"></i><span>Transparent Donations</span></li>
+          <li class="flex items-center gap-1.5 text-amber-400"><i data-lucide="heart" class="w-3 h-3"></i><span>Zero-Fee Pet Adoptions</span></li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-[#065F46] font-outfit">Emergency &amp; HQ</h4>
+        <div class="space-y-2 text-xs text-stone-400">
+          <p class="flex items-center gap-2"><i data-lucide="phone-call" class="w-3.5 h-3.5 text-red-400"></i><span class="font-bold text-white">9973169896 (24x7 Helpline)</span></p>
+          <p class="flex items-center gap-2"><i data-lucide="mail" class="w-3.5 h-3.5 text-amber-400"></i><span>help@petstraysavior.org</span></p>
+          <p class="flex items-start gap-2 pt-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i><span>National Animal Safety Center, Sector 62, Noida (Delhi-NCR)</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+      <p class="flex items-center gap-1.5">
+        <span>© <span id="yearNow"></span> Pet &amp; Stray Savior. All Rights Reserved.</span>
+        <span class="text-[#D97706]">♥</span>
+        <span>Built for Animal Welfare &amp; Road Safety.</span>
+      </p>
+      <div class="flex items-center gap-4 text-[11px]">
+        <span class="text-amber-400 font-mono">FLOW CHART COMPLIANT v2.5</span><span>•</span>
+        <span class="text-emerald-400">IoT 868MHz ONLINE</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- SOS RESCUE MODAL -->
+<div id="sosModal" class="modal-backdrop hidden-modal">
+  <div class="bg-white rounded-2xl w-full max-w-lg p-6 sm:p-8 space-y-5 relative max-h-[90vh] overflow-y-auto">
+    <button onclick="closeModal('sosModal')" class="absolute top-4 right-4 text-stone-400 hover:text-stone-700"><i data-lucide="x" class="w-5 h-5"></i></button>
+    <div class="flex items-center gap-3">
+      <div class="w-11 h-11 rounded-xl bg-red-600 text-white flex items-center justify-center"><i data-lucide="alert-octagon" class="w-6 h-6"></i></div>
+      <div>
+        <h3 class="text-xl font-bold font-outfit text-[#1F2937]">Report Road SOS Rescue</h3>
+        <p class="text-xs text-stone-500">Injured, trapped, or at-risk animal? Report now for instant dispatch.</p>
+      </div>
+    </div>
+    <a href="tel:9973169896" class="w-full py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-sm rounded-xl shadow-xs flex items-center justify-center gap-2 transition-colors"><i data-lucide="phone-call" class="w-4 h-4"></i>Call 24x7 9973169896</a>
+    <div id="sosFormWrap">
+      <form id="sosForm" class="space-y-3">
+        <input required placeholder="Your Name *" class="w-full px-3 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-red-500">
+        <input required type="tel" placeholder="Phone Number *" class="w-full px-3 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-red-500">
+        <div class="space-y-1.5">
+          <input id="sosLocationInput" required placeholder="Animal Location / Landmark *" class="w-full px-3 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-red-500">
+          <button type="button" onclick="captureSosLocation()" id="useLocationBtn" class="w-full py-2 rounded-xl bg-red-50 hover:bg-red-100 border border-red-200 text-red-700 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors">
+            <i data-lucide="locate-fixed" class="w-3.5 h-3.5"></i><span>Use My Current Location</span>
+          </button>
+          <p id="sosLocationStatus" class="text-[10px] text-stone-400"></p>
+        </div>
+        <textarea placeholder="Describe the animal's condition..." rows="3" class="w-full px-3 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-red-500"></textarea>
+        <button type="submit" class="w-full py-3 bg-[#1F2937] hover:bg-stone-800 text-white font-bold text-sm rounded-xl flex items-center justify-center gap-2"><i data-lucide="send" class="w-4 h-4"></i>Submit Rescue Report</button>
+      </form>
+      <div id="sosSuccess" class="hidden-modal text-center py-6 space-y-2">
+        <i data-lucide="check-circle-2" class="w-10 h-10 text-emerald-500 mx-auto"></i>
+        <h4 class="font-bold text-[#1F2937]">Rescue Team Notified!</h4>
+        <p class="text-xs text-stone-500">Our nearest ambulance is being dispatched to your location.</p>
+        <button onclick="closeModal('sosModal')" class="mt-2 px-4 py-2 bg-stone-100 rounded-lg text-xs font-bold">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AUTH MODAL -->
+<div id="authModal" class="modal-backdrop hidden-modal">
+  <div class="bg-white rounded-2xl w-full max-w-md p-6 sm:p-8 space-y-5 relative">
+    <button onclick="closeModal('authModal')" class="absolute top-4 right-4 text-stone-400 hover:text-stone-700"><i data-lucide="x" class="w-5 h-5"></i></button>
+    <div class="text-center space-y-1">
+      <div class="w-12 h-12 rounded-xl bg-[#D97706] text-white flex items-center justify-center mx-auto"><i data-lucide="user" class="w-6 h-6"></i></div>
+      <h3 class="text-xl font-bold font-outfit text-[#1F2937]">Sign In / Register</h3>
+      <p class="text-xs text-stone-500">Pet Owner, Volunteer, Shelter Manager, or Driver</p>
+    </div>
+    <div class="grid grid-cols-2 gap-1 p-1 bg-stone-100 rounded-xl text-xs font-bold">
+      <button type="button" data-auth-tab="login" onclick="switchAuthMode('login')" class="py-2 rounded-lg bg-white text-[#1F2937] shadow-sm">Sign In</button>
+      <button type="button" data-auth-tab="register" onclick="switchAuthMode('register')" class="py-2 rounded-lg text-stone-600">Register</button>
+    </div>
+    <div id="authLoginView">
+      <form id="loginForm" class="space-y-3">
+        <input name="email" required type="email" placeholder="Email Address" class="w-full px-3 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-amber-500">
+        <input name="password" required type="password" placeholder="Password" class="w-full px-3 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-amber-500">
+        <button type="submit" class="w-full py-3 bg-[#D97706] hover:bg-amber-700 text-white font-bold text-sm rounded-xl">Sign In</button>
+      </form>
+    </div>
+    <div id="authRegisterView" class="hidden-modal">
+      <form id="registerForm" class="space-y-3">
+        <input name="fullName" required placeholder="Full Name" class="w-full px-3 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-amber-500">
+        <input name="email" required type="email" placeholder="Email Address" class="w-full px-3 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-amber-500">
+        <input name="password" required type="password" minlength="6" placeholder="Password (min 6 characters)" class="w-full px-3 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-amber-500">
+        <select name="role" class="w-full px-3 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-amber-500">
+          <option value="pet_owner">Pet Owner</option><option value="volunteer">Volunteer</option><option value="shelter_manager">Shelter Manager</option><option value="driver">Driver</option>
+        </select>
+        <button type="submit" class="w-full py-3 bg-[#D97706] hover:bg-amber-700 text-white font-bold text-sm rounded-xl">Create Account</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN / CENTRAL DB MODAL -->
+<div id="adminModal" class="modal-backdrop hidden-modal">
+  <div class="bg-[#1F2937] text-white rounded-2xl w-full max-w-2xl p-6 sm:p-8 space-y-5 relative border border-stone-700 max-h-[85vh] overflow-y-auto">
+    <button onclick="closeModal('adminModal')" class="absolute top-4 right-4 text-stone-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+    <div class="flex items-center gap-3">
+      <div class="w-11 h-11 rounded-xl bg-stone-800 border border-stone-700 flex items-center justify-center"><i data-lucide="database" class="w-6 h-6 text-amber-400"></i></div>
+      <div>
+        <h3 class="text-xl font-bold font-outfit">Central Database Portal</h3>
+        <p class="text-xs text-stone-400">Live system status connecting Animals, Sensors, Alerts, Shelters &amp; Donations.</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div class="bg-stone-800 p-4 rounded-xl border border-stone-700"><p class="text-2xl font-black text-amber-400" data-stat="taggedAnimals">1,480+</p><p class="text-[11px] text-stone-400">Tagged Animals</p></div>
+      <div class="bg-stone-800 p-4 rounded-xl border border-stone-700"><p class="text-2xl font-black text-emerald-400" data-stat="collisionsAvoided">1,120+</p><p class="text-[11px] text-stone-400">Collisions Avoided</p></div>
+      <div class="bg-stone-800 p-4 rounded-xl border border-stone-700"><p class="text-2xl font-black text-rose-400" data-stat="petsAdopted">340+</p><p class="text-[11px] text-stone-400">Pets Adopted</p></div>
+      <div class="bg-stone-800 p-4 rounded-xl border border-stone-700"><p class="text-2xl font-black text-white" data-stat="verifiedShelters">12</p><p class="text-[11px] text-stone-400">Verified Shelters</p></div>
+    </div>
+    <p class="text-xs text-stone-400">This demo portal reflects the flow-chart system architecture: Registration → 25m Alert → Rescue Dispatch → Shelter Admission → Adoption / Donation.</p>
+  </div>
+</div>
+
+<!-- EASY GUIDE MODAL -->
+<div id="easyGuideModal" class="modal-backdrop hidden-modal">
+  <div class="bg-white rounded-2xl w-full max-w-2xl p-6 sm:p-8 space-y-5 relative max-h-[85vh] overflow-y-auto">
+    <button onclick="closeModal('easyGuideModal')" class="absolute top-4 right-4 text-stone-400 hover:text-stone-700"><i data-lucide="x" class="w-5 h-5"></i></button>
+    <div class="text-center space-y-1">
+      <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-3 py-1 rounded-md border border-amber-200">User Guide</span>
+      <h3 class="text-2xl font-bold font-outfit text-[#1F2937] mt-1">How to Use Pet &amp; Stray Savior</h3>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-4">
+      <div class="p-4 bg-amber-50 rounded-xl border border-amber-200 space-y-1"><p class="text-xs font-bold text-amber-800">1. Drivers</p><p class="text-[11px] text-stone-600">Get warned at 25m via cabin buzzer to slow down safely.</p></div>
+      <div class="p-4 bg-red-50 rounded-xl border border-red-200 space-y-1"><p class="text-xs font-bold text-red-700">2. Spot an Injured Animal</p><p class="text-[11px] text-stone-600">Tap SOS Rescue or call 9973169896 for instant dispatch.</p></div>
+      <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-200 space-y-1"><p class="text-xs font-bold text-emerald-800">3. Adopt or Donate</p><p class="text-[11px] text-stone-600">Browse shelters, adopt a rescued pet for free, or sponsor a collar.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ADOPTION MODAL -->
+<div id="adoptModal" class="modal-backdrop hidden-modal">
+  <div class="bg-white rounded-2xl w-full max-w-md p-6 sm:p-8 space-y-4 relative">
+    <button onclick="closeModal('adoptModal')" class="absolute top-4 right-4 text-stone-400 hover:text-stone-700"><i data-lucide="x" class="w-5 h-5"></i></button>
+    <div class="text-center space-y-1">
+      <div class="w-12 h-12 rounded-xl bg-[#D97706] text-white flex items-center justify-center mx-auto"><i data-lucide="paw-print" class="w-6 h-6"></i></div>
+      <h3 class="text-xl font-bold font-outfit text-[#1F2937]" id="adoptModalTitle">Adoption Application</h3>
+      <p class="text-xs text-stone-500">100% free, ethical adoption — vaccinated &amp; microchipped.</p>
+    </div>
+    <form id="adoptForm" class="space-y-3">
+      <input required placeholder="Your Full Name" class="w-full px-3 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-amber-500">
+      <input required type="tel" placeholder="Phone Number" class="w-full px-3 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-amber-500">
+      <input required placeholder="City / Address" class="w-full px-3 py-2.5 rounded-xl border border-stone-300 text-sm outline-none focus:ring-2 focus:ring-amber-500">
+      <button type="submit" class="w-full py-3 bg-[#D97706] hover:bg-amber-700 text-white font-bold text-sm rounded-xl">Submit Application</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/render.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

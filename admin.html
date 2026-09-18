@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Dashboard - Pet & Stray Savior</title>
+<meta name="theme-color" content="#1F2937" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#FDFCF8] text-[#1F2937] antialiased">
+
+<header class="bg-[#1F2937] text-white sticky top-0 z-30 border-b border-stone-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <div class="w-9 h-9 rounded-xl bg-[#D97706] flex items-center justify-center"><i data-lucide="layout-dashboard" class="w-5 h-5 text-white"></i></div>
+      <div><p class="font-black font-outfit leading-none" id="dashTitle">Dashboard</p><p class="text-[10px] text-stone-400 uppercase tracking-wider">Pet &amp; Stray Savior</p></div>
+    </a>
+    <div class="flex items-center gap-3 text-sm">
+      <span class="text-stone-300">Hi, <strong id="adminName" class="text-white">Admin</strong> <span id="dashRole" class="ml-1 text-[10px] uppercase tracking-wider text-amber-300 font-bold"></span></span>
+      <button onclick="Auth.logout()" class="px-3 py-2 rounded-xl bg-stone-800 hover:bg-red-600 border border-stone-700 text-xs font-bold flex items-center gap-1.5 transition-colors"><i data-lucide="log-out" class="w-3.5 h-3.5"></i>Sign out</button>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 lg:grid-cols-12 gap-6">
+  <aside class="lg:col-span-3 space-y-1.5">
+    <button data-admin-tab="overview" data-roles="admin" onclick="AdminUI.showTab('overview',this)" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-stone-100"><i data-lucide="activity" class="w-4 h-4"></i>Overview</button>
+    <button data-admin-tab="sos" data-roles="admin" onclick="AdminUI.showTab('sos',this)" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-stone-100"><i data-lucide="alert-octagon" class="w-4 h-4"></i>SOS Reports</button>
+    <button data-admin-tab="adoptions" data-roles="admin" onclick="AdminUI.showTab('adoptions',this)" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-stone-100"><i data-lucide="heart" class="w-4 h-4"></i>Adoption Applications</button>
+    <button data-admin-tab="donations" data-roles="admin" onclick="AdminUI.showTab('donations',this)" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-stone-100"><i data-lucide="hand-heart" class="w-4 h-4"></i>Donations</button>
+    <button data-admin-tab="contact" data-roles="admin" onclick="AdminUI.showTab('contact',this)" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-stone-100"><i data-lucide="mail" class="w-4 h-4"></i>Contact Messages</button>
+    <button data-admin-tab="requests" data-roles="admin" onclick="AdminUI.showTab('requests',this)" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-stone-100"><i data-lucide="clipboard-list" class="w-4 h-4"></i>Service Requests</button>
+    <button data-admin-tab="pets" data-roles="admin,shelter_manager,pet_owner" onclick="AdminUI.showTab('pets',this)" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-stone-100"><i data-lucide="paw-print" class="w-4 h-4"></i><span data-tab-label="pets">Manage Pets</span></button>
+    <div class="pt-2 mt-2 border-t border-stone-200" data-admin-divider data-roles="admin,shelter_manager"></div>
+    <button data-admin-tab="shelters" data-roles="admin,shelter_manager" onclick="AdminUI.showTab('shelters',this)" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-stone-100"><i data-lucide="home" class="w-4 h-4"></i><span data-tab-label="shelters">Manage Shelters</span></button>
+    <button data-admin-tab="testimonials" data-roles="admin" onclick="AdminUI.showTab('testimonials',this)" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-stone-100"><i data-lucide="quote" class="w-4 h-4"></i>Manage Testimonials</button>
+    <button data-admin-tab="causes" data-roles="admin" onclick="AdminUI.showTab('causes',this)" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-stone-100"><i data-lucide="hand-heart" class="w-4 h-4"></i>Manage Donation Causes</button>
+    <button data-admin-tab="services" data-roles="admin" onclick="AdminUI.showTab('services',this)" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-stone-100"><i data-lucide="list-checks" class="w-4 h-4"></i>Manage Services</button>
+  </aside>
+
+  <section class="lg:col-span-9 space-y-6">
+    <div id="panel-overview" data-admin-panel class="space-y-4">
+      <h2 class="text-xl font-black font-outfit">Platform Overview</h2>
+      <div class="bg-[#1F2937] rounded-2xl p-6 border border-stone-700">
+        <div id="ovStats" class="grid grid-cols-2 sm:grid-cols-4 gap-3"></div>
+      </div>
+    </div>
+
+    <div id="panel-sos" data-admin-panel class="hidden-modal">
+      <h2 class="text-xl font-black font-outfit mb-3">SOS Rescue Reports</h2>
+      <div id="tbl-sos" class="bg-white rounded-2xl border border-[#E5E7EB] overflow-x-auto"></div>
+    </div>
+    <div id="panel-adoptions" data-admin-panel class="hidden-modal">
+      <h2 class="text-xl font-black font-outfit mb-3">Adoption Applications</h2>
+      <div id="tbl-adoptions" class="bg-white rounded-2xl border border-[#E5E7EB] overflow-x-auto"></div>
+    </div>
+    <div id="panel-donations" data-admin-panel class="hidden-modal">
+      <h2 class="text-xl font-black font-outfit mb-3">Donations</h2>
+      <div id="tbl-donations" class="bg-white rounded-2xl border border-[#E5E7EB] overflow-x-auto"></div>
+    </div>
+    <div id="panel-contact" data-admin-panel class="hidden-modal">
+      <h2 class="text-xl font-black font-outfit mb-3">Contact Messages</h2>
+      <div id="tbl-contact" class="bg-white rounded-2xl border border-[#E5E7EB] overflow-x-auto"></div>
+    </div>
+    <div id="panel-requests" data-admin-panel class="hidden-modal">
+      <h2 class="text-xl font-black font-outfit mb-3">Service Requests</h2>
+      <div id="tbl-requests" class="bg-white rounded-2xl border border-[#E5E7EB] overflow-x-auto"></div>
+    </div>
+
+    <div id="panel-pets" data-admin-panel class="hidden-modal grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h2 class="text-xl font-black font-outfit mb-1" id="petsFormTitle">Add Adoptable Pet</h2>
+        <p class="text-xs text-stone-500 mb-3" id="petsFormNote">List a pet for adoption. It appears publicly in the Adopt directory.</p>
+        <form id="addPetForm" class="bg-white rounded-2xl border border-[#E5E7EB] p-5 space-y-3">
+          <input name="name" required placeholder="Pet name *" class="w-full px-3 py-2 rounded-xl border border-stone-300 text-sm">
+          <div class="grid grid-cols-2 gap-2">
+            <select name="species" class="w-full px-3 py-2 rounded-xl border border-stone-300 text-sm">
+              <option value="dog">Dog</option><option value="cat">Cat</option><option value="cattle">Cattle</option><option value="bird">Bird</option><option value="other">Other</option>
+            </select>
+            <input name="gender" placeholder="Gender" class="w-full px-3 py-2 rounded-xl border border-stone-300 text-sm">
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <input name="breed" placeholder="Breed" class="w-full px-3 py-2 rounded-xl border border-stone-300 text-sm">
+            <input name="ageText" placeholder="Age (e.g. 5 Months)" class="w-full px-3 py-2 rounded-xl border border-stone-300 text-sm">
+          </div>
+          <input name="temperament" placeholder="Temperament (comma separated)" class="w-full px-3 py-2 rounded-xl border border-stone-300 text-sm">
+          <input name="shelterName" placeholder="Listed under (shelter / your name)" class="w-full px-3 py-2 rounded-xl border border-stone-300 text-sm">
+          <textarea name="description" rows="2" placeholder="Description" class="w-full px-3 py-2 rounded-xl border border-stone-300 text-sm"></textarea>
+          <label class="flex items-center gap-2 text-xs text-stone-600"><input type="checkbox" name="isUrgent"> Mark as urgent rescue</label>
+          <div>
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-stone-400 mb-1">Pet photo</label>
+            <input type="file" name="image" accept="image/*" class="w-full text-xs">
+          </div>
+          <button type="submit" class="w-full py-2.5 bg-[#D97706] hover:bg-amber-700 text-white text-sm font-bold rounded-xl">Add Pet</button>
+        </form>
+      </div>
+      <div>
+        <h2 class="text-xl font-black font-outfit mb-3" id="petsListTitle">Current Listings</h2>
+        <div id="tbl-pets" class="bg-white rounded-2xl border border-[#E5E7EB] p-4"></div>
+      </div>
+    </div>
+
+    <div id="panel-shelters" data-admin-panel class="hidden-modal">
+      <h2 class="text-xl font-black font-outfit mb-3">Manage Shelters</h2>
+      <div id="mgr-shelters" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+    </div>
+    <div id="panel-testimonials" data-admin-panel class="hidden-modal">
+      <h2 class="text-xl font-black font-outfit mb-3">Manage Testimonials</h2>
+      <div id="mgr-testimonials" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+    </div>
+    <div id="panel-causes" data-admin-panel class="hidden-modal">
+      <h2 class="text-xl font-black font-outfit mb-3">Manage Donation Causes</h2>
+      <div id="mgr-causes" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+    </div>
+    <div id="panel-services" data-admin-panel class="hidden-modal">
+      <h2 class="text-xl font-black font-outfit mb-3">Manage Services</h2>
+      <div id="mgr-services" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+    </div>
+  </section>
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/render.js"></script>
+<script src="js/app.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
